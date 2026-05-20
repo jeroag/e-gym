@@ -1,0 +1,26 @@
+{
+  "name": "E-GYM",
+  "short_name": "E-GYM",
+  "description": "Tu app de entrenamiento personal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0D10",
+  "theme_color": "#ECA72C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "fitness", "sports"],
+  "lang": "es"
+}
