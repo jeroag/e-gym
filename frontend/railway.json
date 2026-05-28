@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schema.railway.app/railpack.json",
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "pnpm build"
+  },
+  "deploy": {
+    "staticDir": "dist"
+  }
+}
