@@ -17,7 +17,18 @@ const app = express()
 
 // ── Seguridad ─────────────────────────────────────────────
 app.use(helmet())
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }))
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173',
+  'http://localhost:4173',
+].filter(Boolean)
+app.use(cors({
+  origin: (origin, cb) => {
+    if (!origin || allowedOrigins.includes(origin)) return cb(null, true)
+    cb(new Error('Not allowed by CORS'))
+  },
+  credentials: true
+}))
 app.use(express.json())
 
 // ── Rutas ─────────────────────────────────────────────────
