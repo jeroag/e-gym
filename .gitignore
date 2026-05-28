@@ -1,1 +1,8 @@
 node_modules/
+
+# Variables de entorno — nunca commitear credenciales reales
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env

@@ -94,6 +94,12 @@ VITE_API_URL=http://localhost:3000/api
 | POST   | /api/messages                  | Ambos |
 | GET    | /api/messages/conversation/:id | Ambos |
 | GET    | /api/messages/unread           | Ambos |
+| POST   | /api/sessions                  | Client |
+| GET    | /api/sessions/my               | Client |
+| GET    | /api/sessions/client/:id       | Trainer |
+| GET    | /api/schedule/my               | Client |
+| GET    | /api/schedule/client/:id       | Trainer |
+| PUT    | /api/schedule/client/:id       | Trainer |
 
 ---
 
