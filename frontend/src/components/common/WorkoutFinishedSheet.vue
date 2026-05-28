@@ -8,8 +8,8 @@
 
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" @click="close" />
 
-        <div class="relative rounded-t-2xl overflow-hidden" style="z-index:2"
-          style="background: #1A171F; padding-bottom: env(safe-area-inset-bottom, 0px);">
+        <div class="relative rounded-t-2xl overflow-hidden"
+          style="z-index:2; background: #1A171F; padding-bottom: env(safe-area-inset-bottom, 0px);">
 
           <!-- Handle -->
           <div class="flex justify-center pt-3 pb-1">
