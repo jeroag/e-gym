@@ -47,20 +47,6 @@
               <label class="stat-label block mb-1">% grasa</label>
               <input v-model.number="bodyForm.body_fat_pct" type="number" step="0.1" min="0" max="100" class="input tnum" />
             </div>
-            <div class="grid grid-cols-3 gap-2">
-              <div>
-                <label class="stat-label block mb-1 text-[9px]">Pecho</label>
-                <input v-model.number="bodyForm.chest_cm" type="number" step="0.1" class="input input-sm tnum" />
-              </div>
-              <div>
-                <label class="stat-label block mb-1 text-[9px]">Cintura</label>
-                <input v-model.number="bodyForm.waist_cm" type="number" step="0.1" class="input input-sm tnum" />
-              </div>
-              <div>
-                <label class="stat-label block mb-1 text-[9px]">Cadera</label>
-                <input v-model.number="bodyForm.hips_cm" type="number" step="0.1" class="input input-sm tnum" />
-              </div>
-            </div>
             <button type="submit" :disabled="savingBody"
               class="btn-primary w-full py-2.5 mt-2 flex items-center justify-center gap-2">
               <Spinner v-if="savingBody" />
@@ -372,7 +358,7 @@ const tab = ref('history')
 
 // Body metrics
 const bodyMetrics = ref([])
-const bodyForm    = ref({ weight_kg: null, body_fat_pct: null, chest_cm: null, waist_cm: null, hips_cm: null })
+const bodyForm    = ref({ weight_kg: null, body_fat_pct: null })
 const savingBody  = ref(false)
 
 // Per-exercise
@@ -505,7 +491,7 @@ async function saveBodyMetric() {
   try {
     await api.post('/progress/body-metrics', { ...bodyForm.value })
     toast.success('Medida registrada')
-    bodyForm.value = { weight_kg: null, body_fat_pct: null, chest_cm: null, waist_cm: null, hips_cm: null }
+    bodyForm.value = { weight_kg: null, body_fat_pct: null }
     await loadBody()
   } catch (e) {
     toast.error(e.response?.data?.error ?? 'Error')
